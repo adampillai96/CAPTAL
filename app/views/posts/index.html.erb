@@ -1,0 +1,24 @@
+<div class="post">
+
+  <div class="title-post">
+<h1 class="h1-big">Posts</h1>
+<%= link_to "NEW" , new_post_path(@post), class:"btn btn-primary" %>
+</div>
+
+<div class="post-parent text-center">
+  <% @posts.each do |post| %>
+    <div class="post-child">
+      <%= link_to post_path(post), class: "content" do %>
+        <h3 class="h3-big"><%= post.title %></h3>
+        <h5 class="h5-big"><%= post.body %></h5>
+      <% end %>
+      <div class="content2">
+        <%= link_to "EDIT" , edit_post_path(post), class:"btn btn-primary" %>
+        <%= link_to "DELETE", post_path(post), method: :delete, data: { confirm: "Delete?" }, class:"btn btn-primary" %>
+
+      </div>
+    </div>
+  <% end %>
+</div>
+
+</div>

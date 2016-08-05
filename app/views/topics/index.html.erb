@@ -1,0 +1,24 @@
+<div class="topic">
+
+  <div class="title-topic">
+<h1 class="h1-big">Topics</h1>
+<%= link_to "NEW" , new_topic_path(@topic), class:"btn btn-primary" %>
+</div>
+
+<div class="topic-parent text-center">
+  <% @topics.each do |topic| %>
+    <div class="topic-child">
+      <%= link_to topic_path(topic), class: "content" do %>
+        <h3 class="h3-big"><%= topic.title %></h3>
+        <h5 class="h5-big"><%= topic.description %></h5>
+      <% end %>
+      <div class="content2">
+        <%= link_to "EDIT" , edit_topic_path(topic), class:"btn btn-primary" %>
+        <%= link_to "DELETE", topic_path(topic), method: :delete, data: { confirm: "Delete?" }, class:"btn btn-primary" %>
+
+      </div>
+    </div>
+  <% end %>
+</div>
+
+</div>
