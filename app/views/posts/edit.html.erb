@@ -1,4 +1,4 @@
-<%= form_for(@post, url: post_path(@post), html: { id: "post-update-form" }) do |f| %>
+<%= form_for(@post, url: topic_post_path(@topic, @post), html: { id: "post-update-form" }) do |f| %>
   <h1 class="text-center">
     Create Post
   </h1>
@@ -13,7 +13,26 @@
     <%= f.text_field :body, id: "topic_body_field", class: 'form-control' %>
   </div>
 
-  <div class="form-group text-center">
-    <%= f.submit "Update Post", class: "btn btn-success btn-lg" %>
+  <!-- this is where u add image -->
+
+  <div class="form-group">
+      <h4 class="text-center"> Post Image </h4>
+      <div id="preview-image">
+        <% if @post.image? %>
+          <%= image_tag @post.image, class: "img-settings img-responsive center-block" %>
+        <% end %>
+      </div>
+    </div>
+
+  <div class="form-group">
+    <%= f.file_field :image, id: "post_image_field", class: 'form-control image-uploader' %>
   </div>
+
+
+<!-- Update button -->
+
+    <div class="form-group text-center">
+      <%= f.submit "Update Post", class: "btn btn-success btn-lg" %>
+    </div>
+
 <% end %>
