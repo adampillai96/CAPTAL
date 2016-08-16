@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
-  has_many :comments
-  belongs_to :topic
+    belongs_to :user
+    has_many :comments
+    belongs_to :topic
 
-  mount_uploader :image, ImageUploader
+    mount_uploader :image, ImageUploader
 end

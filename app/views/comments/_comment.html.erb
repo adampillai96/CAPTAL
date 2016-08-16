@@ -1,0 +1,18 @@
+<div id="comment_<%=comment.id%>">
+    <div class="title-comment text-center">
+        <div class="comment-child text-center">
+
+            <div class="img">
+                <%=image_tag comment.image %>
+            </div>
+            <h5 class="h5-big"><%= comment.body %></h5>
+
+            <div class="content2">
+                <% if comment.user == current_user || current_user&.admin? || current_user&.moderator? %>
+                <%= link_to "EDIT" , edit_topic_post_comment_path(comment.post.topic, comment.post, comment), remote: true, class:"btn btn-primary" %>
+                <%= link_to "DELETE", topic_post_comment_path(comment.post.topic, comment.post, comment),authenticity_token: true, remote: true, method: :delete, data: { confirm: "Delete?" }, class:"btn btn-primary" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

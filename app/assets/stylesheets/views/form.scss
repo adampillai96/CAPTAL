@@ -1,0 +1,46 @@
+.comment-form {
+    img {
+        flex: 2 0;
+        display: flex;
+        width: 230px;
+        height: 150px;
+    }
+
+    .h1-big {
+        padding-top: 90px;
+        font-size: 100px;
+        text-align: center;
+        font-family: 'Hammersmith One', sans-serif;
+    }
+
+    a:link {
+        color: orange;
+    }
+    /* mouse over link */
+    a:hover {
+        color: yellow;
+    }
+    /* selected link */
+    a:active {
+        color: yellow;
+    }
+    .img {
+        flex: 0 0;
+        display: flex;
+        width: 230px;
+        height: 170px;
+        margin-left: 155px;
+    }
+    .form-style {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex: 0 1 550px;
+
+    }
+    .button{
+      padding-top: 20px;
+    }
+}

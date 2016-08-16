@@ -1,0 +1,28 @@
+<div class="comment-form">
+
+    <h1 class="h1-big">
+        Create Comment
+    </h1>
+    <%= form_for(comment, url: topic_post_comments_path, authenticity_token: true, remote: true ,html: { id: "comment-create-form" }) do |f| %>
+    <div class="form-style">
+        <div class="form-group">
+            <h4>
+                <%= f.label :text_field, "Body" %>
+            </h4>
+            <%= f.text_field :body, id: "comment_body_field", class: 'form-control' %>
+
+            <div class="form-group text-center">
+                <h4 class="text-center">
+                    Comment Image
+                </h4>
+
+                <%= f.file_field :image, id: "post_image_field", class: 'form-control image-uploader' %>
+                <div class="button">
+                    <%= f.submit "Create Comment", class: "btn btn-success btn-lg" %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% end %>
+</div>

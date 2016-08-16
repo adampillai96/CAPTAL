@@ -1,25 +1,33 @@
 <div class="post">
 
-  <div class="title-post">
-<h1 class="h1-big">Posts</h1>
-<%= link_to "NEW" , new_topic_post_path(@topic, @post), class:"btn btn-primary" %>
-</div>
-
-<div class="post-parent text-center">
-  <% @posts.each do |post| %>
-    <div class="post-child">
-      <%= link_to topic_post_comments_path(@topic, post), class: "content" do %>
-        <h3 class="h3-big"><%= post.title %></h3>
-        <h5 class="h5-big"><%= post.body %></h5>
-        <%= image_tag post.image %>
-      <% end %>
-      <div class="content2">
-        <%= link_to "EDIT" , edit_topic_post_path(@topic, post), class:"btn btn-primary" %>
-        <%= link_to "DELETE", topic_post_path(@topic, post), method: :delete, data: { confirm: "Delete?" }, class:"btn btn-primary" %>
-
-      </div>
+    <div class="title-post">
+        <h1 class="h1-big">Posts</h1>
+        <%= link_to "NEW" , new_topic_post_path(@topic, @post), class:"btn btn-primary" %>
     </div>
-  <% end %>
-</div>
+
+    <div class="post-parent text-center">
+        <% @posts.each do |post| %>
+        <div class="post-child">
+            <%= link_to topic_post_comments_path(@topic, post), class: "content" do %>
+
+            <div class="img">
+                <%=image_tag post.image %>
+            </div>
+
+            <h3 class="h3-big"><%= post.title %>
+            </h3>
+            <h5 class="h5-big"><%= post.body %></h5>
+
+
+            <% end %>
+
+            <div class="content2">
+                <%= link_to "EDIT" , edit_topic_post_path(@topic, post), class:"btn btn-primary" %>
+                <%= link_to "DELETE", topic_post_path(@topic, post), method: :delete, data: { confirm: "Delete?" }, class:"btn btn-primary" %>
+
+            </div>
+        </div>
+        <% end %>
+    </div>
 
 </div>

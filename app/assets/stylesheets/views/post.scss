@@ -1,83 +1,59 @@
 .post {
 
-  .title-post{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .h1-big{
-    padding-top: 100px;
-    font-size: 100px;
-    text-align: center;
-    font-family: 'Hammersmith One', sans-serif;
-
-  }
-
-  .post-parent {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .post-child{
-    width:600px;
-    margin:10px 30px;
-    height: 200px;
-    border-style: solid;
-    border-color: black;
-    padding: 25px;
-
-  }
-
-  .h3-big{
-    font-size: 50px;
-    justify-content: center;
-  }
-
-  .h5-big{
-    font-size: 25px;
-    justify-content: center;
-  }
-
-  .content2{
-    color: #FFFFFF;
-  }
-
-  a:link {
-    color: orange;
-  }
-
-  /* mouse over link */
-  a:hover {
-    color: hotpink;
-  }
-
-  /* selected link */
-  a:active {
-    color: yellow;
-  }
+    .title-post {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .h1-big {
+        padding-top: 90px;
+        font-size: 100px;
+        text-align: center;
+        font-family: 'Hammersmith One', sans-serif;
+    }
+    .post-parent {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .post-child {
+        width: 600px;
+        margin: 10px 30px;
+        border-style: solid;
+        border-color: black;
+        padding: 25px;
+    }
+    .h3-big {
+        font-size: 50px;
+        justify-content: center;
+        word-wrap: break-word;
+    }
+    .h5-big {
+        font-size: 25px;
+        justify-content: center;
+        word-wrap: break-word;
+    }
+    .content2 {
+        color: #FFFFFF;
+    }
+    a:link {
+        color: orange;
+    }
+    /* mouse over link */
+    a:hover {
+        color: yellow;
+    }
+    /* selected link */
+    a:active {
+        color: yellow;
+    }
 }
-
-
-
-// .row{
-//   // flex: 0 0;
-//   width:600px;
-//   margin:10px;
-//   border-style: solid;
-//   border-color: black;
-//   justify-content: space-around;
-//   align-items: center;
-//   text-align:center;
-//     vertical-align:middle;
-// }
-//
-// .container-fluid{
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-//   // flex-wrap: wrap;
-//   }
+.img {
+    flex: 0 0;
+    display: flex;
+    width: 230px;
+    height: 170px;
+    margin-left: 155px;
+}

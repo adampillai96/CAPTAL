@@ -1,5 +1,6 @@
 class Comment < ApplicationRecord
-  belongs_to :post
+    belongs_to :user
+    belongs_to :post
 
-  mount_uploader :image, ImageUploader
+    mount_uploader :image, ImageUploader
 end

@@ -1,23 +1,19 @@
-<div class="comment">
+<div class="comments-index" data-id="<%=@post.id%>">
+    <div class="comment">
 
-  <div class="title-comment">
-<h1 class="h1-big">Comments</h1>
-<%= link_to "NEW" , new_topic_post_comment_path(@topic, @post, @comment), class:"btn btn-primary" %>
-</div>
+        <div class="title-comment">
+            <h1 class="h1-big">Comments</h1>
+        </div>
 
-<div class="comment-parent text-center">
-  <% @comments.each do |comment| %>
-    <div class="comment-child">
-      <%= link_to topic_post_comments_path(@topic, @post, comment), class: "content" do %>
-        <h5 class="h5-big"><%= comment.body %></h5>
-      <% end %>
-      <div class="content2">
-        <%= link_to "EDIT" , edit_topic_post_comment_path(@topic, @post, comment), class:"btn btn-primary" %>
-        <%= link_to "DELETE", topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: "Delete?" }, class:"btn btn-primary" %>
+        <div id="comments">
+            <% @comments.each do |comment| %>
+            <%= render partial: "comment", locals: { comment: comment, post: @post, topic: @topic} %>
+            <% end %>
+        </div>
 
-      </div>
+        <div id="comments-form-container">
+            <%= render partial: "form", locals: { comment: @comment, post: @post } %>
+        </div>
+
     </div>
-  <% end %>
-</div>
-
 </div>

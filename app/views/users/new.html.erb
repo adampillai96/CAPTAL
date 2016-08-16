@@ -1,0 +1,50 @@
+<div class="user new">
+
+    <div class="users">
+
+        <%= form_for(@user, url: users_path, html: { id: "user-create-form" }) do |f| %>
+        <h1 class="h1-big">
+            Sign Up
+        </h1>
+
+        <div class="form-group">
+            <h4>
+                <%= f.label :email_field, "Email" %>
+            </h4>
+            <%= f.text_field :email, required: true, id: "user_email_field", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+            <h4>
+                <%= f.label :username_field, "Username" %>
+            </h4>
+            <%= f.text_field :username, required: true, id: "user_username_field", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+            <h4>
+                <%= f.label :password_field, "Password" %>
+            </h4>
+            <%= f.password_field :password, required: true, id: "user_password_digest_field", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+            <h4>
+                <%= f.label :password_confirmation_field, "Confirm Password" %>
+            </h4>
+            <%= f.password_field :password_confirmation, required: true, id: "user_password_digest_field", class: 'form-control' %>
+        </div>
+
+        <div class="form-group text-center">
+            <input name="commit" value="Sign me up!" class="btn btn-primary btn-lg" data-disable-with="Sign me up!" type="submit">
+        </div>
+
+        <h5 class="text-center">
+            <a class="white shadowed sign-in-link" href="/sessions/new">I already have an account</a>
+        </h5>
+
+        <% end %>
+
+    </div>
+
+</div>
